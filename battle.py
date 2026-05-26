@@ -1,10 +1,12 @@
 from ex0.factory_creation_creature import FlameFactory, AquaFactory
+from ex0.factory_creation_creature import CreatureFactory
+from ex0.creature import Creature
 
 
-def verificator(factory):
+def verificator(factory: CreatureFactory) -> None:
     base_creature = factory.create_base()
     evolved_creature = factory.create_evolved()
-    
+
     if base_creature is None or evolved_creature is None:
         print("The factory creation has an Error")
         return
@@ -17,7 +19,7 @@ def verificator(factory):
     print("\n")
 
 
-def creature_fight(playerone, playertwo):
+def creature_fight(playerone: Creature, playertwo: Creature) -> None:
     playerone.describe()
     print("vs.")
     playertwo.describe()
@@ -25,28 +27,14 @@ def creature_fight(playerone, playertwo):
     playertwo.attack()
 
 
-
-
 if __name__ == "__main__":
-    
+
     flame_factory = FlameFactory()
     aqua_factory = AquaFactory()
-    
+
     verificator(flame_factory)
     verificator(aqua_factory)
 
     playerone = flame_factory.create_base()
     playertwo = aqua_factory.create_base()
     creature_fight(playerone, playertwo)
-
-    
-
-
-
-
-
-
-
-
-
-
