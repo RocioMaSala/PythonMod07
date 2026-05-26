@@ -1,4 +1,4 @@
-from ex0.factory_creation_creature import FlameFactory, AquaFactory
+from ex1.factory_creation_creature_ex1 import FlameFactory, AquaFactory
 from ex1.factory_creation_creature_ex1 import TransformCreatureFactory
 from ex1.factory_creation_creature_ex1 import HealingCreatureFactory
 from ex2.battlestrategy import NormalStrategy, AggressiveStrategy
