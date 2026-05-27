@@ -1,6 +1,5 @@
 from ex0.factory_creation_creature import FlameFactory, AquaFactory
 from ex0.factory_creation_creature import CreatureFactory
-from ex0.creature import Creature
 
 
 def verificator(factory: CreatureFactory) -> None:
@@ -19,7 +18,11 @@ def verificator(factory: CreatureFactory) -> None:
     print("\n")
 
 
-def creature_fight(playerone: Creature, playertwo: Creature) -> None:
+def creature_fight(factoryone: CreatureFactory, factorytwo: CreatureFactory) -> None:
+    
+    playerone = factoryone.create_base()
+    playertwo = factorytwo.create_base()
+    
     playerone.describe()
     print("vs.")
     playertwo.describe()
@@ -34,7 +37,5 @@ if __name__ == "__main__":
 
     verificator(flame_factory)
     verificator(aqua_factory)
-
-    playerone = flame_factory.create_base()
-    playertwo = aqua_factory.create_base()
-    creature_fight(playerone, playertwo)
+   
+    creature_fight(flame_factory, aqua_factory)
